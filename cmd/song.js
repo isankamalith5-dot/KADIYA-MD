@@ -59,72 +59,36 @@ module.exports = {
             return reply("❌ *Error:* සින්දුව හෝ වීඩියෝව සොයා ගැනීමට නොහැකි විය!");
         }
 
-        // 2. Thumbnail + song info (sent as a normal image/caption message —
-        //    this part always renders fine, it's not the button system).
-        try {
-            await socket.sendMessage(sender, {
-                image: { url: songThumb },
-                caption: `✨ *_👑𝗞ᴀᴅɪ𝗬𝗮-𝙓-𝙈𝘿🔥_ Music Downloader* ✨\n\n📌 *Title:* ${songTitle}\n🕒 *Duration:* ${duration}\n👁️ *Views:* ${views}\n🔗 *URL:* ${youtubeUrl}`,
-            }, { quoted: msg });
-        } catch (thumbErr) {
-            console.error('[song] thumbnail send failed:', thumbErr);
-        }
-
-        // 3. Interactive buttons — modern WhatsApp "native flow" format.
-        // NOTE: The old `buttons` + `headerType` template-message format
-        // (used previously here) was deprecated by WhatsApp itself and is
-        // simply not rendered by current WhatsApp clients anymore for
-        // regular (non business-API) accounts — this is true no matter
-        // where the bot is hosted (Heroku or otherwise). The fix is to
-        // switch to the interactiveMessage/nativeFlowMessage format, which
-        // is the same pattern already working in cmd/emoji.js, and which
-        // the incoming-message parser in pair.js already knows how to read
-        // (see the `interactiveResponseMessage` handling there).
-        const buttonMessage = {
-            interactiveMessage: {
-                body: { text: '*පහත බොත්තම් භාවිතයෙන් ඔබට අවශ්‍ය Format එක තෝරාගන්න:* 🎧' },
-                footer: { text: '© Powerd By Kadiya-X-MD 🇱🇰' },
-                header: { hasMediaAttachment: false },
-                nativeFlowMessage: {
-                    buttons: [
-                        {
-                            name: 'quick_reply',
-                            buttonParamsJson: JSON.stringify({
-                                display_text: '🎵 Audio (320kbps)',
-                                id: `.download_audio ${youtubeUrl}`,
-                            }),
-                        },
-                        {
-                            name: 'quick_reply',
-                            buttonParamsJson: JSON.stringify({
-                                display_text: '🎥 Video (720p)',
-                                id: `.download_video ${youtubeUrl}`,
-                            }),
-                        },
-                        {
-                            name: 'quick_reply',
-                            buttonParamsJson: JSON.stringify({
-                                display_text: '📂 Document (File)',
-                                id: `.download_doc ${youtubeUrl}`,
-                            }),
-                        },
-                    ],
-                    messageVersion: 1,
-                },
+        // 2. Buttons පණිවිඩය නිර්මාණය කිරීම (Baileys Interactive Buttons Format)
+        // සටහන: නවතම WhatsApp updates වල Buttons පෙන්වීමට Template Buttons භාවිතා කරයි.
+        
+        const buttons = [
+            {
+                buttonId: `.download_audio ${youtubeUrl}`, // බොත්තම ක්ලික් කල විට trigger වන command එක
+                buttonText: { displayText: '🎵 Audio (320kbps)' },
+                type: 1
             },
+            {
+                buttonId: `.download_video ${youtubeUrl}`, 
+                buttonText: { displayText: '🎥 Video (720p)' },
+                type: 1
+            },
+            {
+                buttonId: `.download_doc ${youtubeUrl}`, 
+                buttonText: { displayText: '📂 Document (File)' },
+                type: 1
+            }
+        ];
+
+        const buttonMessage = {
+            image: { url: songThumb },
+            caption: `✨ *_👑𝗞ᴀᴅɪ𝗬𝗮-𝙓-𝙈𝘿🔥_ Music Downloader* ✨\n\n📌 *Title:* ${songTitle}\n🕒 *Duration:* ${duration}\n👁️ *Views:* ${views}\n🔗 *URL:* ${youtubeUrl}\n\n*පහත බොත්තම් භාවිතයෙන් ඔබට අවශ්‍ය Format එක තෝරාගන්න:*`,
+            footer: '© Powerd By Kadiya-X-MD 🇱🇰',
+            buttons: buttons,
+            headerType: 4
         };
 
-        try {
-            await socket.sendMessage(sender, { viewOnceMessage: { message: buttonMessage } }, { quoted: msg });
-        } catch (btnErr) {
-            // Fail-safe: if the interactive message is ever rejected, fall
-            // back to plain numbered text so the user is never stuck.
-            console.error('[song] button message failed, falling back to text:', btnErr);
-            await socket.sendMessage(sender, {
-                text: `🎧 *Format එකක් තෝරාගැනීමට පහත command එකක් type කරන්න:*\n\n1️⃣ .download_audio ${youtubeUrl}\n2️⃣ .download_video ${youtubeUrl}\n3️⃣ .download_doc ${youtubeUrl}`,
-            }, { quoted: msg });
-        }
-
+        await socket.sendMessage(sender, buttonMessage, { quoted: msg });
         try { await socket.sendMessage(sender, { react: { text: '✅', key: msg.key } }); } catch (_) {}
 
     } catch (e) {
