@@ -56,14 +56,14 @@ const config = {
     PREFIX: '.',
     MAX_RETRIES: 3,
     ADMIN_LIST_PATH: './admin.json',
-    AKIRA_IMG: 'https://i.ibb.co/Nd1QWz3Z/83c0dccdd716.png',
+    AKIRA_IMG: 'https://files.catbox.moe/exg10c.jpg',
     NEWSLETTER_JID: '1203633997848423529947@newsletter',
     NEWSLETTER_LIST: [
         '1203633993833529947@newsletter'
     ],
     NEWSLETTER_MESSAGE_ID: '428',
     OTP_EXPIRY: 300000,
-    OWNER_NUMBER: '94767106413',
+    OWNER_NUMBER: '94763353368',
     CHANNEL_LINK: 'https://whatsapp.com/channel/0029Vb69K9665yDEFt3DRR0D'
 };
 
