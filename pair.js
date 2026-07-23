@@ -1,10 +1,3 @@
-/*                                                                                                                                    
-  AKIRA GIRL MD MINI BOT - MULTI SESSION SUPPORT
-  DEVELOPED BY CHAMOD TECH OFC
-  FULLY ENC AND PRIVET SOURCE CODE    
-  Code Ussai #akak - Thawa #akada balanne                                                                    
-*/
-
 const express = require('express');
 const fs = require('fs-extra');
 const path = require('path');
@@ -63,15 +56,15 @@ const config = {
     PREFIX: '.',
     MAX_RETRIES: 3,
     ADMIN_LIST_PATH: './admin.json',
-    AKIRA_IMG: 'https://i.ibb.co/FZjptLY/tourl-1779693358137.jpg',
-    NEWSLETTER_JID: '120363399723529947@newsletter',
+    AKIRA_IMG: 'https://i.ibb.co/Nd1QWz3Z/83c0dccdd716.png',
+    NEWSLETTER_JID: '1203633997848423529947@newsletter',
     NEWSLETTER_LIST: [
-        '120363399723529947@newsletter'
+        '1203633993833529947@newsletter'
     ],
     NEWSLETTER_MESSAGE_ID: '428',
     OTP_EXPIRY: 300000,
-    OWNER_NUMBER: '94761480834',
-    CHANNEL_LINK: 'https://whatsapp.com/channel/0029VbAp1d6HVvTSFTYtco0T'
+    OWNER_NUMBER: '94767106413',
+    CHANNEL_LINK: 'https://whatsapp.com/channel/0029Vb69K9665yDEFt3DRR0D'
 };
 
 const replyFq = (text) => reply(text);
@@ -833,9 +826,9 @@ async function EmpirePairInner(number, sanitizedNumber, res) {
                     await socket.sendMessage(userJid, {
                         image: { url: config.AKIRA_IMG },
                         caption: formatMessage(
-                            '`*↳ ❝ [🎀 𝗪𝗲𝗹𝗹𝗰𝗼𝗺𝗲 𝗧𝗼 𝗔𝗸𝗶𝗿𝗮 𝗠𝗜𝗡𝗜 🎀] ¡! ❞*`',
-                            `╭─────⊹₊⟡⋆ 𝐈𝐧𝐟𝐨 ⋆⟡₊⊹─────<𝟑 .ᐟ\n┊ 𝜗𝜚⋆ : 𝚅𝙴𝚁𝚂𝙸𝙾𝙽 - V1.0.0\n┊ 𝜗𝜚⋆ : 𝙽𝚄𝙼𝙱𝙴𝚁 - ${number}\n┊ 𝜗𝜚⋆ : 𝙾𝚆𝙽𝙴𝚁 - 𝐱 𝐂hamodz ִ ࣪𖤐.ᐟ\n╰────────────────────<𝟑 .ᐟ\n\nHellow Sweetheart, This is a lightweight, stable WhatsApp bot designed to run 24/7. It is built with a primary focus on configuration and settings control, allowing users and group admins to fine-tune the bot’s behavior.\n\n₊❏❜ ⋮ Web - kadiya-md-production.up.railway.app`,
-                            '𝗔esthatic 𝗤ueen 𝗕y 𝗖hamod 𝜗𝜚⋆'
+                            '`*↳ ❝ [🎭 𝐕!𝐏𝐄𝐑 𝐌𝐃 🎭] ¡! ❞*`',
+                            `╭─────⊹₊⟡⋆ 𝐈𝐧𝐟𝐨 ⋆⟡₊⊹─────<𝟑 .ᐟ\n┊ 𝜗𝜚⋆ : 𝚅𝙴𝚁𝚂𝙸𝙾𝙽 - V1.0.0\n┊ 𝜗𝜚⋆ : 𝙽𝚄𝙼𝙱𝙴𝚁 - ${number}\n┊ 𝜗𝜚⋆ : 𝙾𝚆𝙽𝙴𝚁 - V!per X Team ִ ࣪𖤐.ᐟ\n╰────────────────────<𝟑 .ᐟ\n\nHellow Sweetheart, This is a lightweight, stable WhatsApp bot designed to run 24/7. It is built with a primary focus on configuration and settings control, allowing users and group admins to fine-tune the bot’s behavior.\n`,
+                            '© 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝚅!𝙿𝙴𝚁 𝙼𝙳 𝚃𝙴𝙰𝙼\nConnect V!per Md Bot Free: https://vipermd.sasatech.online'
                         )
                     });
                     console.log(`📩 Welcome message sent for ${sanitizedNumber}`);
@@ -986,29 +979,16 @@ function getUptime() {
     return dDisplay + hDisplay + mDisplay + sDisplay;
 }
 		
-const ARABIAN_THUMB_G = 'https://files.catbox.moe/5ztdoe.jpeg';
-// NOTE: forwardingScore/isForwarded/externalAdReply were previously set on
-// EVERY command reply (menu, ping, alive, etc). Faking "highly forwarded"
-// + "ad" metadata on high-frequency outbound messages is a well-known
-// trigger for WhatsApp's spam classifier, especially when many replies go
-// out in a short burst (e.g. someone spamming .menu). Dropped to a plain,
-// unflagged branding footer instead — visually the same, no fake signals.
-const arabianCtxGlobal = {
-  externalAdReply: {
-    title                : '🎀 𝗔𝗸𝗶𝗿𝗮 𝗕𝘆 𝐂𝗵𝗮𝗺𝗼𝗱𝐳 🇱🇰',
-    body                 : '𝐀𝐞𝐬𝐭𝐡𝐚𝐭𝐢𝐜 𝐁𝐨𝐭 𝐐𝐮𝐞𝐞𝐧 💘',
-    thumbnailUrl         : ARABIAN_THUMB_G,
-    sourceUrl            : 'mini.gotukolaya.site',
-    mediaType            : 1,
-    renderLargerThumbnail: true,
-  },
-};
+// NOTE: forwardingScore/isForwarded/externalAdReply have been removed entirely
+// to avoid spam flags. Plain messages only.
+const ARABIAN_THUMB_G = '';
+const arabianCtxGlobal = {};
 
-  // ── Arabian mystery header ──────────────────────────────────────────────────
-  const ARABIAN_TITLE = '🦋 ₊˚ ⊹ 𝐀 𝐊 𝐈 𝐑 𝐀  𝐌 𝐃 ⊹ ˚₊ 𝜗𝜚';
-  const ARABIAN_SUB   = '𝐀𝐞𝐬𝐭𝐡𝐚𝐭𝐢𝐜 𝐁𝐨𝐭 𝐐𝐮𝐞𝐞𝐧 💘';
+// ── Arabian mystery header ──────────────────────────────────────────────────
+const ARABIAN_TITLE = '𝐕!𝐏𝐄𝐑 𝐌𝐃 🎭';
+const ARABIAN_SUB   = '© 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝚅!𝙿𝙴𝚁 𝙼𝙳 𝚃𝙴𝙰𝙼\nConnect V!per Md Bot Free: https://vipermd.sasatech.online';
 
-  const arabianCtx = () => ({});
+const arabianCtx = () => ({});
 
 const downloadQuotedMedia = async (quoted) => {
     const { downloadContentFromMessage } = require('baileys');
