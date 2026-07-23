@@ -9,7 +9,7 @@ module.exports = {
   execute: async (ctx) => {
     const { socket, msg, sender, quoted, text, type, akira } = ctx;
     const ownerNum = '+94763353368';
-    const ownerName = 'お 𝐂𝐡𝐚𝐦𝐨𝐝 ࣪𖤐.ᐟ';
+    const ownerName = 'お 𝐕𝐢𝐩𝐞𝐫 ࣪𖤐.ᐟ';
     
     await socket.sendMessage(sender, { react: { text: '🥷', key: msg.key } });
 
