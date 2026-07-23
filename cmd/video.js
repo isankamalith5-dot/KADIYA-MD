@@ -22,7 +22,7 @@ module.exports = {
         const slDate = moment().tz('Asia/Colombo').format('YYYY-MM-DD');
         const slTimeNow = moment().tz('Asia/Colombo').format('HH:mm:ss');
 
-        let caption = `*↳ ❝ [🎀 𝗔𝗸𝗶𝗿𝗮 𝗚𝗶𝗿𝗹 𝗩𝗶𝗱𝗲𝗼 🎀] ¡! ❞*\n\n` +
+        let caption = `*↳ ❝ [🎀 𝐕𝐈𝐏𝐄𝐑 𝐌𝐃 𝗩𝗶𝗱𝗲𝗼 🎀] ¡! ❞*\n\n` +
                         `🎬 *TITLE :* ${video.title}\n` +
                         `👤 *CHANNEL :* ${video.author.name}\n` +
                         `⏱️ *DURATION :* ${video.timestamp}\n` +

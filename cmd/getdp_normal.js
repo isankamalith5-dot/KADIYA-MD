@@ -20,7 +20,7 @@ module.exports = {
 
         await socket.sendMessage(sender, {
             image: { url: dpUrl },
-            caption: `*↳ ❝ [🎀 𝗔𝗸𝗶𝗿𝗮 𝗚𝗶𝗿𝗹 𝗗𝗣 - 𝗡𝗼𝗿𝗺𝗮𝗹 🎀] ¡! ❞*\n\n📷 Normal Profile picture of @${targetNumber}`,
+            caption: `*↳ ❝ [🎀 𝐕𝐈𝐏𝐄𝐑 𝐌𝐃 𝗗𝗣 - 𝗡𝗼𝗿𝗺𝗮𝗹 🎀] ¡! ❞*\n\n📷 Normal Profile picture of @${targetNumber}`,
             mentions: [target],
             contextInfo: typeof arabianCtx === 'function' ? arabianCtx() : undefined
         }, { quoted: msg });

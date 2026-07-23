@@ -14,7 +14,7 @@ module.exports = {
         const ps       = gm.participants || [];
         const tm       = args.join(' ').trim() || '*Attention everyone!*';
         const mentions = ps.map(p => p.id);
-        let text = `*↳ ❝ [🎀 𝗔𝗸𝗶𝗿𝗮 𝗚𝗶𝗿𝗹 𝗧𝗮𝗴𝗮𝗹𝗹 🎀] ¡! ❞*\n\n> *\`🗣️ :\`* ${tm}\n\n`;
+        let text = `*↳ ❝ [🎀 𝐕𝐈𝐏𝐄𝐑 𝐌𝐃 𝗧𝗮𝗴𝗮𝗹𝗹 🎀] ¡! ❞*\n\n> *\`🗣️ :\`* ${tm}\n\n`;
         for (const p of ps) text += `₊❏❜ ⋮ @${p.id.split('@')[0]}\n`;
         text += `\n> *𝗔esthatic 𝗤ueen 𝗕y 𝗖hamod 𝜗𝜚⋆*`;
         await socket.sendMessage(sender, { text, mentions }, { quoted: msg });

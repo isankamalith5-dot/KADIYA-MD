@@ -57,8 +57,8 @@ module.exports = {
         ];
 
         const buttonMessage = {
-            text: `*↳ ❝ [🎀 𝗔𝗸𝗶𝗿𝗮 𝗚𝗶𝗿𝗹 𝗗𝗣 🎀] ¡! ❞*\n\nSelect the quality you want to download for @${targetNumber} or contact Owner.`,
-            footer: 'Akira MD Bot DP Downloader',
+            text: `*↳ ❝ [🎀 𝐕𝐈𝐏𝐄𝐑 𝐌𝐃 𝗗𝗣 🎀] ¡! ❞*\n\nSelect the quality you want to download for @${targetNumber} or contact Owner.`,
+            footer: '𝐕𝐈𝐏𝐄𝐑 𝐌𝐃 Bot DP Downloader',
             buttons: buttons,
             headerType: 1,
             mentions: [target],

@@ -15,7 +15,7 @@ module.exports = {
         const admCnt  = gm.participants.filter(p => p.admin).length;
         const created = gm.creation ? new Date(gm.creation * 1000).toLocaleDateString() : 'Unknown';
         await reply(
-          `*↳ ❝ [🎀 𝗔𝗸𝗶𝗿𝗮 𝗚𝗶𝗿𝗹 𝗚𝗜𝗻𝗳𝗼 🎀] ¡! ❞*\n\n` +
+          `*↳ ❝ [🎀 𝐕𝐈𝐏𝐄𝐑 𝐌𝐃 𝗚𝗜𝗻𝗳𝗼 🎀] ¡! ❞*\n\n` +
           `₊❏❜ ⋮ *\`📛 𝙽𝙰𝙼𝙴 :\`* ${gm.subject}\n` +
           `₊❏❜ ⋮ *\`🆔 𝙹𝙸𝙳 :\`* ${gm.id}\n` +
           `₊❏❜ ⋮ *\`📝 𝙳𝙴??𝙲 :\`* ${(gm.desc || 'None').slice(0, 100)}\n` +

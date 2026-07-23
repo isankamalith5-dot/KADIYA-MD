@@ -65,7 +65,7 @@ const CATEGORIES = [
   {
     title: '𝐀𝐈 𝐂𝐦𝐝𝐳',
     rows: [
-      { title: 'akira', id: 'akira', description: 'ᴀᴋɪʀᴀ ᴀɪ ɢɪʀʟꜰʀɪᴇɴᴅ' },
+      { title: 'vipermd', id: 'vipermd', description: 'ᴠɪᴘᴇʀ ᴍᴅ ᴀɪ ɢɪʀʟꜰʀɪᴇɴᴅ' },
     ],
   },
   {
@@ -94,7 +94,7 @@ function buildSections() {
 }
 
 function buildFallbackText(pushname, slDate, slTimeNow) {
-  let body = `*↳ ❝ [🎀 𝗔𝗸𝗶𝗿𝗮 𝗚𝗶𝗿𝗹 𝗠𝗲𝗻𝘂 🎀] ¡! ❞*
+  let body = `*↳ ❝ [🎀 𝐕𝐈𝐏𝐄𝐑 𝐌𝐃 𝗠𝗲𝗻𝘂 🎀] ¡! ❞*
 
 ┏━━━━━°⌜ \`赤い糸\` ⌟°━━━━━┓
 ┃👤 *𝚄𝚂𝙴𝚁* : ${pushname}
@@ -136,7 +136,7 @@ module.exports = {
         sender,
         {
           image: { url: akira },
-          caption: `*↳ ❝ [🎀 𝗔𝗸𝗶𝗿𝗮 𝗚𝗶𝗿𝗹 𝗠𝗲𝗻𝘂 🎀] ¡! ❞*\n\n👤 *𝚄𝚂𝙴𝚁* : ${pushname}\n📅 *𝙳𝙰𝚃𝙴* : ${slDate}  ⌚ *𝚃𝙸𝙼𝙴* : ${slTimeNow}\n\n_Tap the button below to browse commands by category._`,
+          caption: `*↳ ❝ [🎀 𝐕𝐈𝐏𝐄𝐑 𝐌𝐃 𝗠𝗲𝗻𝘂 🎀] ¡! ❞*\n\n👤 *𝚄𝚂𝙴𝚁* : ${pushname}\n📅 *𝙳𝙰𝚃𝙴* : ${slDate}  ⌚ *𝚃𝙸𝙼𝙴* : ${slTimeNow}\n\n_Tap the button below to browse commands by category._`,
           contextInfo: arabianCtx ? arabianCtx() : undefined,
         },
         { quoted: msg }
@@ -159,7 +159,7 @@ module.exports = {
         interactiveMessage: {
           body: { text: '*ꜱᴇʟᴇᴄᴛ ᴀ ᴄᴀᴛᴇɢᴏʀʏ ᴛᴏ ᴠɪᴇᴡ ɪᴛꜱ ᴄᴏᴍᴍᴀɴᴅꜱ* 🎀' },
           footer: { text: '𝗔esthatic 𝗤ueen 𝗕y 𝗖hamod' },
-          header: { title: '🎀 𝗔𝗸𝗶𝗿𝗮 𝗚𝗶𝗿𝗹 𝗠𝗲𝗻𝘂', hasMediaAttachment: false },
+          header: { title: '🎀 𝐕𝐈𝐏𝐄𝐑 𝐌𝐃 𝗠𝗲𝗻𝘂', hasMediaAttachment: false },
           nativeFlowMessage: {
             buttons: [
               {

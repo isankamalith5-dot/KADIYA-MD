@@ -38,7 +38,7 @@ module.exports = {
         else if (percentage >= 30) hearts = '💖💖';
         else hearts = '💖';
 
-        let shipText = `*↳ ❝ [🎀 𝗔𝗸𝗶𝗿𝗮 𝗚𝗶𝗿𝗹 𝗟𝘃𝗖𝗮𝗹 🎀] ¡! ❞*\n\n`;
+        let shipText = `*↳ ❝ [🎀 𝐕𝐈𝐏𝐄𝐑 𝐌𝐃 𝗟𝘃𝗖𝗮𝗹 🎀] ¡! ❞*\n\n`;
         shipText += `*${name1}* 💑 *${name2}*\n\n`;
         shipText += `${hearts}\n`;
         shipText += `*Love Percentage:* ${percentage}%\n\n`;
