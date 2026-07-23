@@ -20,7 +20,7 @@ const ffmpeg = require("fluent-ffmpeg");
 const ffmpegPath = require("ffmpeg-static");
 ffmpeg.setFfmpegPath(ffmpegPath);
   const images = [
-    'https://files.catbox.moe/k8zvw2.jpg'
+    'https://files.catbox.moe/exg10c.jpg'
   ]; 
 
 const akira = images[Math.floor(Math.random() * images.length)];
